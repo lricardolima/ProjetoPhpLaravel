@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +13,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/','HomeControlador@getWelcome');
+
+Route::get('/nome/idade','MeuSistema@getIdade');
+
+Route::resource('/cliente', 'ClienteControlador');
+
